@@ -19,7 +19,6 @@ function humanChoice(){
 
 function computerChoice(){
     let choiceNumber = Math.floor(1 + Math.random()*3);
-    console.log(choiceNumber);
     if(choiceNumber == 1){
         return "rock";
     }
@@ -31,4 +30,16 @@ function computerChoice(){
     }
 }
 
-console.log(computerChoice());
+function playRound(humanChoice,computerChoice){
+    if(humanChoice == computerChoice){
+        console.log("You tied!");
+    }
+    else if((humanChoice == "rock" && computerChoice == "scissors") || (humanChoice == "paper" && computerChoice == "rock") || (humanChoice == "scissors" && computerChoice == "paper")){
+        console.log("You won the round!");
+        humanScore++;
+    }
+    else{
+        console.log("You lost this round!");
+        computerScore++;
+    }
+}
