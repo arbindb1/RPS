@@ -35,11 +35,11 @@ function playRound(humanChoice,computerChoice,round){
         console.log("You tied on round "+round+"!");
     }
     else if((humanChoice == "rock" && computerChoice == "scissors") || (humanChoice == "paper" && computerChoice == "rock") || (humanChoice == "scissors" && computerChoice == "paper")){
-        console.log("You won the round "+ round + "!");
+        console.log("You won on round "+ round + "!"+humanChoice+" beats "+computerChoice);
         humanScore++;
     }
     else{
-        console.log("You lost the round "+ round + "!");
+        console.log("You lost on round "+ round + "!"+computerChoice+" beats "+humanChoice);
         computerScore++;
     }
 }
