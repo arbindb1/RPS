@@ -6,29 +6,28 @@ Live preview: https://arbindb1.github.io/RPS/
 ## ROCK,PAPER,SCISSORS
 
 ### Main Pseudo Code:
-    BEGIN 
-    SET global variable humanScore TO 0
-    SET global variable computerScore TO 0
+    BEGIN GAME
+        SET global variable humanScore TO 0
+        SET global variable computerScore TO 0
+        DEFINE playRound function
+        SET round TO 1;
+        WHILE round <= 5 
+            SET humanChoice TO: 
+                                CALL humanChoice();
 
-    CALL playGame():
-                    SET round TO 1;
-                    WHILE round <= 5 
-                        SET humanChoice TO: 
-                                            CALL humanChoice();
+            SET computerChoice TO: 
+                                CALL computerChoice();
+            CALL playRound(humanChoice,computerChoice)
+            INCREMENT round BY 1
+        END WHILE   
 
-                        SET computerChoice TO: 
-                                             CALL computerChoice();
-                        CALL playRound(humanChoice,computerChoice)
-                        INCREMENT round BY 1
-                    END WHILE   
-
-                    IF humanScore > computerScore
-                        DISPLAY "You win the game!"
-                    ELSE IF humanScore < computerScore
-                        DISPLAY "You lose the game!"
-                    ELSE
-                        DISPLAY "It's a tie!"
-                    END IF
+        IF humanScore > computerScore
+            DISPLAY "You win the game!"
+        ELSE IF humanScore < computerScore
+            DISPLAY "You lose the game!"
+        ELSE
+            DISPLAY "It's a tie!"
+        END IF
     END
 
 ### Sub problem 1: humanChoice() Pseudo Code:
