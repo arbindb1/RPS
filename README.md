@@ -1,3 +1,8 @@
+## Description
+This Rock, Paper, Scissors game is a five-round match between a human player and the computer. In each round, the human is prompted to enter their choice—either "rock", "paper", or "scissors"—while the computer randomly selects its own using a number generator. The playRound() function compares both choices and determines the winner for that round, updating the human or computer score accordingly. After five rounds, the game evaluates the final scores and displays a message indicating whether the human won, lost, or if the game ended in a tie. This is the first version of the game, and it is designed to be played in the JavaScript console of a web browser.
+
+Live preview: https://arbindb1.github.io/RPS/
+
 ## ROCK,PAPER,SCISSORS
 
 ### Main Pseudo Code:
