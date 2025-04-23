@@ -1,6 +1,4 @@
-//Global variables 
-let humanScore = 0;
-let computerScore = 0;
+
 
 function humanChoice(){
     let choice="";
@@ -30,22 +28,26 @@ function computerChoice(){
     }
 }
 
-function playRound(humanChoice,computerChoice,round){
-    if(humanChoice == computerChoice){
-        console.log("You tied on round "+round+"!");
-    }
-    else if((humanChoice == "rock" && computerChoice == "scissors") || (humanChoice == "paper" && computerChoice == "rock") || (humanChoice == "scissors" && computerChoice == "paper")){
-        console.log("You won on round "+ round + "!"+humanChoice+" beats "+computerChoice);
-        humanScore++;
-    }
-    else{
-        console.log("You lost on round "+ round + "!"+computerChoice+" beats "+humanChoice);
-        computerScore++;
-    }
-}
+
 
 function playGame(){
-
+    //Global variables 
+    let humanScore = 0;
+    let computerScore = 0;
+    
+    function playRound(humanChoice,computerChoice,round){
+        if(humanChoice == computerChoice){
+            console.log("You tied on round "+round+"!");
+        }
+        else if((humanChoice == "rock" && computerChoice == "scissors") || (humanChoice == "paper" && computerChoice == "rock") || (humanChoice == "scissors" && computerChoice == "paper")){
+            console.log("You won on round "+ round + "!"+humanChoice+" beats "+computerChoice);
+            humanScore++;
+        }
+        else{
+            console.log("You lost on round "+ round + "!"+computerChoice+" beats "+humanChoice);
+            computerScore++;
+        }
+    }
     let round = 1;
     while(round<=5){
         alert("Round "+round);
