@@ -1,0 +1,37 @@
+*{
+    margin:0;
+    padding:0;
+}
+.main-container{
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+}
+.main-container .nav{
+background-color: #000;    
+color: #fff;
+}
+
+.main-container .content > .game-content{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
+
+.main-container .content > .game-content > .playerSide,.main-container .content > .game-content > .computerSide{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    padding:20px;
+}
+.main-container .content > .game-content > .playerSide{
+    border-right:2px solid black;
+}
+
+.button-content{
+    display:flex;
+    justify-content: center;
+}
+

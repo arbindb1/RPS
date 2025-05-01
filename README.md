@@ -74,5 +74,12 @@ Live preview: https://arbindb1.github.io/RPS/
     END
 
 
+--------------------------------------------------------- Using DOM --------------------------------------------------------------------
+### Main Pseudo code
+    Create three buttons for rock,paper and scissors.
+    Add event listeners to make button interactive
+
+
+
         
 
