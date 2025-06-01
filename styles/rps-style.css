@@ -35,3 +35,20 @@ color: #fff;
     justify-content: center;
 }
 
+.disabled{
+    pointer-events:none;
+    opacity:0.5;
+}
+
+.enabled{
+    pointer-events:auto;
+    opacity:1;
+}
+
+.invisible{
+    display:none;
+}
+
+.visible{
+    display:inline-block;
+}

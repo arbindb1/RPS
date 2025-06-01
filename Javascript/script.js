@@ -1,53 +1,87 @@
+let moveButtons = document.querySelectorAll('.playerSide button');
+let humanScore = 0;
+let computerScore = 0;
 
+moveButtons.forEach(button => button.addEventListener('click',(e)=>{
+    let humanChoice = e.currentTarget.dataset.move;
+    let deviceChoice = computerChoice();
 
-function humanChoice(){
-    let choice="";
-    while(1){
-        choice = prompt("Enter your choice (rock/paper/scissors):");
-        choice = choice.toLowerCase();
-        if((choice == "rock" || choice == "paper" || choice == "scissors")){
-            break;
+    console.log('humanChoice:'+humanChoice);
+    console.log("computer choice:"+deviceChoice);
+    playRound(humanChoice,deviceChoice);
+}))
+
+    function playRound(humanChoice,computerChoice){
+        if(humanChoice == computerChoice){}
+        else if((humanChoice == "Rock" && computerChoice == "Scissors") || (humanChoice == "Paper" && computerChoice == "Rock") || (humanChoice == "Scissors" && computerChoice == "Paper")){
+            humanScore++;
         }
         else{
-            alert("Only rock,paper,scissors values are allowed.");
+            computerScore++;
         }
+        console.log("humanScore:"+humanScore);
+        console.log("Computerscore:"+computerScore);
+        if(humanScore == 5){
+            postPlay("Play Again");
+            document.querySelector('.output').textContent = "You won congratulation!";
+        }
+        else if(computerScore == 5){
+            postPlay("Try Again");
+            document.querySelector('.output').textContent = "You lost womp womp. Better luck next time.";
+        }
+        setScore(humanScore,computerScore)
     }
-    return choice;
+
+function setScore(){
+        document.querySelector('.playerScore span').textContent = humanScore;
+        document.querySelector('.computerScore span').textContent = computerScore;
 }
+
+function preplay(){
+    let gameContent = document.querySelector('.game-content');
+    let play = document.querySelector('.play-button');
+    play.addEventListener('click',(e)=>{
+        humanScore = 0;
+        computerScore = 0;
+        document.querySelector('.output').textContent = "";
+        setScore();
+        gameContent.classList.remove('disabled');
+        gameContent.classList.add('enabled');
+        play.classList.remove('visible');
+        play.classList.add('invisible');
+        play.textContent = "Play";
+    });
+}
+
+function postPlay(playButtonText){
+        let gameContent = document.querySelector('.game-content');
+    let play = document.querySelector('.play-button');
+        gameContent.classList.remove('enabled');
+        gameContent.classList.add('disabled');
+        play.classList.remove('invisible');
+        play.classList.add('visible');
+        play.textContent=playButtonText;
+}
+
+preplay();
 
 function computerChoice(){
     let choiceNumber = Math.floor(1 + Math.random()*3);
     if(choiceNumber == 1){
-        return "rock";
+        return "Rock";
     }
     else if(choiceNumber == 2){
-        return "paper";
+        return "Paper";
     }
     else{
-        return "scissors";
+        return "Scissors";
     }
 }
-
-
-
 // function playGame(){
 //     //Global variables 
-//     let humanScore = 0;
-//     let computerScore = 0;
+
     
-//     function playRound(humanChoice,computerChoice,round){
-//         if(humanChoice == computerChoice){
-//             console.log("You tied on round "+round+"!");
-//         }
-//         else if((humanChoice == "rock" && computerChoice == "scissors") || (humanChoice == "paper" && computerChoice == "rock") || (humanChoice == "scissors" && computerChoice == "paper")){
-//             console.log("You won on round "+ round + "!"+humanChoice+" beats "+computerChoice);
-//             humanScore++;
-//         }
-//         else{
-//             console.log("You lost on round "+ round + "!"+computerChoice+" beats "+humanChoice);
-//             computerScore++;
-//         }
-//     }
+
 //     let round = 1;
 //     while(round<=5){
 //         alert("Round "+round);

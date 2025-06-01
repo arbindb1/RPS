@@ -8,30 +8,30 @@
 </head>
 <body>
     <div class="main-container">
-        <div class="nav">
-            <h1>RPS</h1>
-        </div>
         <div class="content">
-            <div class="game-content">
+            <div class="round-counter">
+            </div>
+            <div class="game-content disabled">
                 <div class="playerSide">
                     <div class="player">Player</div>
-                    <div class="playerScore">Score:</div>
+                    <div class="playerScore">Score: <span></span></div>
                     <div class="playerChoice">
-                        <button>Rock</button>
-                        <button>Paper</button>
-                        <button>Scissors</button>
+                        <button data-move="Rock">Rock</button>
+                        <button data-move="Paper">Paper</button>
+                        <button data-move="Scissors">Scissors</button>
                     </div>
                 </div>
                 <div class="computerSide">
                     <div class="computer">Computer</div>
-                    <div class="computerScore">Score:</div>
+                    <div class="computerScore">Score: <span></span></div>
                     <div class="computerChoice">
                         <button>What</button>
                     </div>
                 </div>
             </div>
             <div class="button-content">
-                <button>Play</button>
+                        <h1 class="output"></h1>
+                <button class="play-button visible">Play</button>
             </div>
         </div>
     </div>
